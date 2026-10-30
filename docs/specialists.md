@@ -1,46 +1,43 @@
-# Matriz de especialistas
+# Matriz de competências
 
-Os 24 especialistas são perfis de uma mesma base. Compartilham contratos, fontes e política de revisão; não exigem modelos diferentes. O orquestrador é o coordenador e não é contado entre os 24.
+Os 25 perfis representam responsabilidades, sem impor produtos, linguagens ou frameworks. O orquestrador coordena o trabalho e não é contado entre os especialistas. Um perfil não demonstra competência sem casos e avaliações pertinentes.
 
-| ID                 | Área                     | Quando consultar                       | Entrega/tecnologias de referência                             |
-| ------------------ | ------------------------ | -------------------------------------- | ------------------------------------------------------------- |
-| `product`          | Produto e requisitos     | Objetivo ambíguo, escopo e prioridades | Problema, histórias, critérios e dependências                 |
-| `architecture`     | Arquitetura              | Mudança de limites e contratos         | ADR, desenho modular, contratos e invariantes                 |
-| `backend`          | Backend e APIs           | Serviço, autorização e transação       | TypeScript/Fastify; Java/Spring ou C#/.NET se o projeto usar  |
-| `frontend`         | Frontend                 | Telas web e estados                    | HTML/CSS/TypeScript; framework conforme o produto             |
-| `ux`               | UX e pesquisa            | Fluxos e fricção                       | Hipóteses, roteiro de pesquisa e teste de usabilidade         |
-| `visual-design`    | Design visual            | Composição e identidade de interface   | Hierarquia, tipografia, paleta e responsividade               |
-| `accessibility`    | Acessibilidade           | Toda experiência de usuário            | WCAG 2.2 AA, semântica, teclado e leitores de tela            |
-| `qa`               | Qualidade                | Aceite e regressão                     | Testes por risco; node:test, Playwright conforme contexto     |
-| `security`         | Segurança                | Dados, comandos, ferramentas e rede    | Ameaças, autorização, validação e teste negativo              |
-| `privacy`          | Privacidade              | Voz, dados pessoais e retenção         | Minimização, acesso, exclusão e requisitos a revisar          |
-| `devops`           | Entrega                  | Build, CI e implantação                | GitHub Actions; Docker só quando justificado                  |
-| `sre`              | Confiabilidade           | Falhas e recuperação                   | Logs mínimos, métricas, timeout e procedimento de recuperação |
-| `performance`      | Desempenho               | Lentidão e limite da máquina           | Benchmark reproduzível de CPU, GPU, memória e latência        |
-| `data`             | Dados                    | Persistência e consultas               | SQLite local; PostgreSQL quando existir necessidade real      |
-| `ai`               | IA                       | Provedor, prompts e inferência         | Ollama local, contratos de entrada/saída, seleção de modelo   |
-| `evaluations`      | Avaliações               | Comparar versões e aprendizado         | Datasets sanitizados, rubricas, baseline e reserva            |
-| `knowledge`        | Conhecimento             | Memória e recuperação                  | Fontes, validade, busca textual; RAG medido no futuro         |
-| `interoperability` | MCP e protocolos         | Ferramentas e outros agentes           | SDK MCP oficial, schemas e futura integração A2A              |
-| `desktop`          | Desktop                  | Bridge e ações locais                  | Tauri/Rust, comandos fixos e testes Windows                   |
-| `voice`            | Voz/multimodal           | STT/TTS e áudio                        | Avaliar alternativas locais, latência e português             |
-| `mobile`           | Mobile/PWA               | Toque, offline e permissões            | PWA primeiro; nativo se o produto exigir                      |
-| `game-design`      | Design de jogos          | Mecânicas e progressão                 | Documento curto, protótipo e playtest                         |
-| `game-engine`      | Engines/Roblox           | Sistemas e rede de jogos               | Godot/GDScript, Unity/C# ou Roblox/Luau conforme o projeto    |
-| `documentation`    | Documentação/localização | Guias, contratos e textos              | Markdown, exemplos executáveis, português e inglês            |
+| ID                 | Competência                | Quando consultar                           | Entrega e revisão esperadas                             |
+| ------------------ | -------------------------- | ------------------------------------------ | ------------------------------------------------------- |
+| `product`          | Produto e requisitos       | Necessidade, escopo ou aceite pouco claros | Problema, resultado, limites e critérios verificáveis   |
+| `architecture`     | Arquitetura                | Fronteiras, contratos e qualidade          | Alternativas, justificativa, consequências e coerência  |
+| `backend`          | Serviços e APIs            | Regras, transações e contratos             | Invariantes, autorização, erros e integração            |
+| `frontend`         | Interfaces web             | Interação e estados da interface           | Fluxos, responsividade e semântica                      |
+| `ux`               | Pesquisa e usabilidade     | Hipóteses sobre uso e fricção              | Plano de pesquisa, achados e decisões sustentadas       |
+| `visual-design`    | Design visual              | Hierarquia e legibilidade                  | Composição adequada ao público e à função               |
+| `accessibility`    | Acessibilidade             | Barreiras de percepção e interação         | Avaliação automática, manual e assistiva pertinente     |
+| `qa`               | Qualidade                  | Aceite e regressão                         | Cenários por risco e evidências reproduzíveis           |
+| `security`         | Segurança                  | Entradas, identidade e permissões          | Ameaças, controles e testes negativos                   |
+| `privacy`          | Privacidade                | Dados pessoais e retenção                  | Minimização, acesso, exclusão e requisitos a revisar    |
+| `devops`           | Construção e entrega       | Reprodutibilidade e implantação            | Pipeline, configuração, custo e recuperação             |
+| `sre`              | Confiabilidade             | Falhas e operação                          | Sinais mínimos, falhas e recuperação                    |
+| `performance`      | Desempenho                 | Limites de tempo e recursos                | Medição antes/depois com ambiente e carga               |
+| `data`             | Dados e persistência       | Modelo e mudanças de dados                 | Integridade, migração, acesso e restauração             |
+| `ai`               | Engenharia de IA           | Modelos, contexto e geração                | Contratos, limites, custo, licença e falhas             |
+| `evaluations`      | Avaliação de agentes       | Comparação e evolução                      | Baseline, rubricas, reserva e regressões                |
+| `knowledge`        | Conhecimento               | Fontes, memória e validade                 | Proveniência e recuperação útil com revisão             |
+| `interoperability` | Protocolos e integração    | Ferramentas e outros agentes               | Contratos, confiança e comunicação real                 |
+| `desktop`          | Integração local           | Dispositivos e sistema operacional         | Ações estruturadas e validação no ambiente alvo         |
+| `voice`            | Voz e multimodalidade      | Áudio e conversa                           | Estados, erros, consentimento e alternativa textual     |
+| `mobile`           | Experiência móvel          | Toque e conectividade                      | Fluxo, permissões e execução no dispositivo             |
+| `game-design`      | Design de jogos            | Mecânicas e experiência                    | Hipóteses, protótipo e teste com jogadores              |
+| `game-engine`      | Jogos e simulação          | Física e sincronização                     | Comportamento, autoridade e desempenho                  |
+| `documentation`    | Documentação e localização | Comunicação de contratos e uso             | Informação por público e exemplos válidos               |
+| `modeling`         | Modelagem e diagramas      | Estrutura, comportamento ou dependências   | Fonte editável, renderização e revisão semântica/visual |
 
-Essas tecnologias são referências para tarefas, não bibliotecas instaladas por este repositório. O bootstrap instala apenas as dependências do runtime e da qualidade em TypeScript.
+## Referências e escolha técnica
 
-## Como coordenar
+As fontes ficam no [catálogo de referências](references.md) e nas propriedades `references` devolvidas pelo catálogo MCP. Consulte-as conforme a pergunta, a versão do projeto e os requisitos. Elas não são conteúdo automaticamente consultado pelo modelo nem dependências instaladas.
 
-1. O orquestrador inspeciona contexto e define aceite.
-2. Seleciona até três perfis de trabalho. A heurística de palavras-chave é o padrão; seleção explícita deve ser usada em tarefas ambíguas.
-3. QA revisa por padrão, exceto quando já está entre os perfis de trabalho. UI, mobile e voz recebem revisão de acessibilidade; APIs, IA, dados, desktop, MCP e entrega recebem segurança.
-4. O host ou operador consulta os perfis de forma sequencial. O planejador não inicia workers.
-5. O responsável consolida conflitos, executa validações e solicita revisão independente do PR. Uma persona revisando sua própria saída não é revisão humana independente.
+Um ADR é uma forma possível de registrar uma decisão e sua justificativa. Não é uma arquitetura, padrão de design ou metodologia obrigatória. A notação de um diagrama depende da pergunta. Nenhum perfil obriga todo projeto a usar o mesmo framework ou processo.
 
-## O que ainda será especializado
+## Coordenação no runtime atual
 
-O conjunto inicial pode receber exemplos reais, rubricas e ferramentas específicas por área. Esse trabalho depende de avaliações: ter um nome e um prompt não prova competência de frontend, segurança, jogos ou qualquer outra área.
+O planejador seleciona até três perfis por palavras-chave ou seleção explícita e indica revisores conforme o risco. Não inicia processos. O host ou operador conduz a execução. Perfis não têm memória independente nem acesso automático a ferramentas.
 
-Não instalar todos os ecossistemas de uma vez. Por exemplo, Roblox exige validação real no Studio quando aplicável; mencionar Luau no perfil não torna essa integração implementada.
+O responsável consolida conflitos, verifica critérios e submete a alteração a revisão. Uma persona revisando sua própria resposta não equivale a revisão independente. Para organizar o trabalho, consulte os [guias reutilizáveis](../guides/README.md).
