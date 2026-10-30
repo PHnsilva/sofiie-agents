@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sofiie-agents": {
+      "command": "CAMINHO_ABSOLUTO_DO_NODE",
+      "args": ["CAMINHO_ABSOLUTO_DO_REPOSITORIO/dist/mcp/stdio.js"],
+      "env": { "SOFIIE_PROVIDER": "handoff" }
+    }
+  }
+}

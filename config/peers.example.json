@@ -1,0 +1,11 @@
+{
+  "peers": [
+    {
+      "id": "sofiie-local",
+      "command": "CAMINHO_ABSOLUTO_DO_NODE",
+      "args": ["CAMINHO_ABSOLUTO_DO_REPOSITORIO/dist/mcp/stdio.js"],
+      "cwd": "CAMINHO_ABSOLUTO_DO_REPOSITORIO",
+      "allowTools": ["list_specialists", "get_specialist", "plan_task", "search_knowledge"]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+name: Entrega ou melhoria
+description: Propor trabalho com evidência, aceite e restrição de custo.
+title: '[Entrega] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema e contexto
+      description: Inclua apenas exemplos públicos ou sanitizados.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Defina comportamento verificável e evidências necessárias.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Dependências, custo e limitações
+      description: Identifique a etapa do roadmap. Custo contratado deve continuar zero.
+    validations:
+      required: true

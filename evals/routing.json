@@ -1,0 +1,74 @@
+[
+  {
+    "id": "web",
+    "objective": "Construir frontend com interface responsiva",
+    "expected": "frontend",
+    "reviewer": "accessibility"
+  },
+  {
+    "id": "api",
+    "objective": "Criar endpoint backend Fastify",
+    "expected": "backend",
+    "reviewer": "security"
+  },
+  {
+    "id": "voice",
+    "objective": "Integrar voz com STT e TTS",
+    "expected": "voice",
+    "reviewer": "accessibility"
+  },
+  {
+    "id": "roblox",
+    "objective": "Corrigir Roblox Luau na engine",
+    "expected": "game-engine",
+    "reviewer": "qa"
+  },
+  {
+    "id": "ci",
+    "objective": "Configurar pipeline CI com GitHub Actions",
+    "expected": "devops",
+    "reviewer": "security"
+  },
+  {
+    "id": "privacy",
+    "objective": "Revisar privacidade LGPD e consentimento",
+    "expected": "privacy",
+    "reviewer": "qa"
+  },
+  {
+    "id": "data",
+    "objective": "Criar banco SQLite com migração SQL",
+    "expected": "data",
+    "reviewer": "security"
+  },
+  {
+    "id": "a11y",
+    "objective": "Auditar acessibilidade WCAG e teclado",
+    "expected": "accessibility",
+    "reviewer": "qa"
+  },
+  {
+    "id": "mcp",
+    "objective": "Definir MCP A2A e protocolo de agentes",
+    "expected": "interoperability",
+    "reviewer": "security"
+  },
+  {
+    "id": "docs",
+    "objective": "Atualizar documentação README e tradução",
+    "expected": "documentation",
+    "reviewer": "qa"
+  },
+  {
+    "id": "memory",
+    "objective": "Projetar RAG e recuperação de conhecimento",
+    "expected": "knowledge",
+    "reviewer": "qa"
+  },
+  {
+    "id": "fallback",
+    "objective": "Quero começar algo novo",
+    "expected": "product",
+    "reviewer": "qa"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mcp-a2a",
+    "title": "MCP e agentes independentes",
+    "content": "MCP conecta um host a ferramentas, recursos e prompts. Um especialista pode ser oferecido como ferramenta MCP. A2A atende descoberta e delegação entre agentes independentes. O MVP implementa MCP stdio e não afirma compatibilidade A2A.",
+    "status": "reference",
+    "sources": ["https://a2a-protocol.org/latest/topics/a2a-and-mcp/", "docs/mcp.md"]
+  },
+  {
+    "id": "learning",
+    "title": "Evolução operacional e memória",
+    "content": "Melhorar instruções, testes e conhecimento versionado não altera pesos de um modelo. Lições exigem origem, evidência e revisão por PR antes de entrar na memória aprovada. O MVP não promove nem grava lições automaticamente.",
+    "status": "reference",
+    "sources": ["docs/learning-loop.md", "docs/architecture.md"]
+  },
+  {
+    "id": "cost",
+    "title": "Custo zero de serviços",
+    "content": "O caminho padrão não chama modelos. A opção Ollama exige um modelo local. Não há fallback remoto, cartão, créditos promocionais, API paga ou hospedagem contratada. Uso do computador, energia e internet continuam existindo. O CI público usa runner padrão sem artifacts ou cache.",
+    "status": "reference",
+    "sources": [
+      "docs/costs.md",
+      "https://docs.github.com/en/billing/concepts/product-billing/github-actions"
+    ]
+  }
+]
