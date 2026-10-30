@@ -18,6 +18,7 @@ Labels padrão existentes no repositório foram preservadas. As famílias novas 
 | Issue                                                      | Entrega                                      | Marco | Bloqueada por                                               |
 | ---------------------------------------------------------- | -------------------------------------------- | ----- | ----------------------------------------------------------- |
 | [#8](https://github.com/PHnsilva/sofiie-agents/issues/8)   | Guias reutilizáveis, referências e modelagem | M0    | Sem bloqueio técnico identificado                           |
+| [#12](https://github.com/PHnsilva/sofiie-agents/issues/12) | Configuração e importação do Project         | M0    | Acesso seguro à sessão de navegador/API                     |
 | [#1](https://github.com/PHnsilva/sofiie-agents/issues/1)   | Inferência local com limites medidos         | M1    | Sem bloqueio técnico identificado; inclui seleção do modelo |
 | [#2](https://github.com/PHnsilva/sofiie-agents/issues/2)   | Servidor consumido por host externo          | M1    | Seleção de host dentro da entrega                           |
 | [#9](https://github.com/PHnsilva/sofiie-agents/issues/9)   | Cliente chamando agente externo              | M1    | Seleção/acesso ao peer dentro da entrega                    |
@@ -36,7 +37,7 @@ Agrupar por marco não cria bloqueio. #6 não depende automaticamente do piloto 
 
 Backlog por prioridade/área; itens prontos e desbloqueados; execução por responsável; revisões/validações; bloqueios com responsável e condição de liberação; roadmap por marco. Veja as políticas adaptáveis no [guia de Projects](../guides/PROJECTS.md).
 
-**Limite atual:** a conexão local consultada não possui `read:project`; a consulta de Projects retornou erro de escopo. Nenhum quadro, campo, filtro ou automação de Project foi criado ou alterado nesta entrega. A proposta acima é documentação, não configuração concluída. Não foram ampliadas permissões da conta.
+**Estado atual:** a conexão da CLI não possui `read:project`. Pelo navegador foi aberto o [Project #5](https://github.com/users/PHnsilva/projects/5), ainda identificado como projeto sem título e sem configuração/importação confirmadas. A continuação foi interrompida porque o controle do navegador não conseguiu confirmar o endereço atual com segurança. Não declarar quadro pronto nem criar outro sem conferir esse registro. A proposta de visões permanece pendente; nenhuma permissão foi ampliada. Veja [a preparação do Project](project-setup.md).
 
 ## Referências usadas na escrita
 
