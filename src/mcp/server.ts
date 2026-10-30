@@ -4,6 +4,19 @@ import { specialists, getSpecialist, specialistInstructions } from '../agents/ca
 import { planTask, taskSchema } from '../orchestrator/planner.js';
 import { consultSpecialist } from '../providers/model.js';
 import { searchKnowledge } from '../memory/search.js';
+import { readFile } from 'node:fs/promises';
+
+const guideResources = [
+  ['overview', 'Guias reutilizáveis', 'guides/README.md'],
+  ['organization', 'Organização do projeto', 'guides/ORGANIZACAO-DO-PROJETO.md'],
+  ['issues', 'Issues executáveis', 'guides/ISSUES.md'],
+  ['projects', 'Projects e quadros', 'guides/PROJECTS.md'],
+  ['contributing', 'Contribuição geral', 'guides/CONTRIBUTING.md'],
+  ['agents', 'Modelo de instruções para agentes', 'guides/AGENTS.md'],
+  ['references', 'Catálogo de referências técnicas', 'docs/references.md'],
+  ['apis', 'Catálogo de APIs e condições de uso', 'docs/api-catalog.md'],
+  ['modeling', 'Modelagem e renderização local', 'docs/modeling.md'],
+] as const;
 
 const readOnly = {
   readOnlyHint: true,
@@ -18,10 +31,31 @@ const idSchema = z.enum(specialists.map((item) => item.id) as [string, ...string
 
 export function createServer() {
   const server = new McpServer({ name: 'sofiie-agents', version: '0.1.0' });
+  for (const [id, title, path] of guideResources) {
+    server.registerResource(
+      title,
+      `sofiie://guides/${id}`,
+      {
+        mimeType: 'text/markdown',
+        description:
+          'Referência para consulta e adaptação. Não altera permissões nem a metodologia do projeto consumidor.',
+      },
+      async (uri) => ({
+        contents: [
+          {
+            uri: uri.href,
+            mimeType: 'text/markdown',
+            text: await readFile(new URL(`../../${path}`, import.meta.url), 'utf8'),
+          },
+        ],
+      }),
+    );
+  }
   server.registerTool(
     'list_specialists',
     {
-      description: 'Lista 24 perfis configuráveis. Não inicia agentes nem modelos.',
+      description:
+        'Lista perfis configuráveis com fontes para consulta. Não inicia agentes nem modelos.',
       inputSchema: z.strictObject({}),
       annotations: readOnly,
     },

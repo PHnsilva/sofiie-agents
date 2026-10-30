@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/client';
 import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
 import { callPeerTool, peerSchema } from '../src/mcp/peers.js';
+import { specialists } from '../src/agents/catalog.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const entry = fileURLToPath(new URL('../src/mcp/stdio.ts', import.meta.url));
@@ -31,10 +32,36 @@ test(
       await client.connect(transport, { timeout: 10000 });
       const catalog = await client.listTools();
       assert.equal(catalog.tools.length, 5);
+      const resources = await client.listResources();
+      assert.equal(resources.resources.length, 9);
+      for (const resource of resources.resources) {
+        const document = await client.readResource({ uri: resource.uri });
+        assert.ok(
+          document.contents.some((content) => 'text' in content && content.text.startsWith('# ')),
+        );
+      }
+      await assert.rejects(client.readResource({ uri: 'sofiie://guides/../../.env' }));
+      assert.ok(resources.resources.some((resource) => resource.uri === 'sofiie://guides/issues'));
+      const guide = await client.readResource({ uri: 'sofiie://guides/issues' });
+      assert.ok(
+        guide.contents.some(
+          (content) =>
+            'text' in content && content.text.includes('Separação orientada a dependências'),
+        ),
+      );
       const listed = await client.callTool({ name: 'list_specialists', arguments: {} });
       const content = listed.content[0];
       assert.equal(content?.type, 'text');
-      if (content?.type === 'text') assert.equal(JSON.parse(content.text).length, 24);
+      if (content?.type === 'text') {
+        const profiles = JSON.parse(content.text);
+        assert.equal(profiles.length, specialists.length);
+        assert.ok(
+          profiles.some(
+            (profile: { id: string; references: string[] }) =>
+              profile.id === 'modeling' && profile.references.length > 0,
+          ),
+        );
+      }
       const invalid = await client.callTool({ name: 'plan_task', arguments: { objective: 'x' } });
       assert.equal(invalid.isError, true);
       const unknownField = await client.callTool({

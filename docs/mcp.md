@@ -31,6 +31,10 @@ Não envie entradas de shell, caminhos livres ou segredos. O servidor rejeita ca
 
 O servidor não inicia agentes em outros aplicativos, escreve em repositórios, instala modelos ou usa sua assinatura de assistente como API.
 
+## Recursos para humanos e agentes
+
+Além das cinco ferramentas, o servidor oferece nove recursos Markdown somente de leitura em `sofiie://guides/`: `overview`, `organization`, `issues`, `projects`, `contributing`, `agents`, `references`, `apis` e `modeling`. Um host compatível pode listar recursos e ler a referência desejada. Os guias exigem adaptação; sua leitura não muda permissões nem a metodologia do projeto consumidor.
+
 ## Cliente para um peer local
 
 Copie `config/peers.example.json` para `config/peers.local.json` e preencha caminhos absolutos. Esse arquivo é ignorado pelo Git. O exemplo aponta para o próprio servidor, para uma verificação inicial:
