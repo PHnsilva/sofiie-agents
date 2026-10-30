@@ -18,4 +18,6 @@ O adaptador é uma integração disponível; a configuração local de cada host
 
 Essa cópia é **somente referência**. O cliente original usa servidor público HTTP e o script principal pode imprimir mensagem final genérica mesmo depois de capturar falhas individuais. Não o carregamos como ferramenta, não instalamos seus requirements nem executamos seu script. Ao reaproveitar código, preserve o aviso de licença e faça uma integração revisada própria.
 
+Os arquivos de referência mantêm os bytes e a formatação originais, inclusive espaços presentes no código. Estão fora do formatador e da normalização de texto do Git; a integridade é verificada pelos hashes, enquanto os controles de estilo continuam valendo para o adaptador e os documentos próprios.
+
 Fonte: [Projeto PlantUML API](https://github.com/joaopauloaramuni/projeto-de-software/tree/6e6140a2a2562e31a3eb035f4940f7b888909145/PROJETOS/Python/Projeto%20PlantUML%20API). O uso local está detalhado em [modelagem](../../docs/modeling.md), incluindo versão e hash do renderizador oficial.
