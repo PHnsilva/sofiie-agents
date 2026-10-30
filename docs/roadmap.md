@@ -20,7 +20,7 @@ Issues #1, #2 e #9 são entregas independentes. A fundação necessária já est
 2. Escolher um modelo de código/instruções pequeno e quantizado, com licença compatível; começar com uma única inferência por vez.
 3. Instalar Ollama e baixar o modelo somente após seleção de tamanho/licença. Não há download automático no bootstrap.
 4. Desabilitar cloud no serviço, testar falha fechada e documentar medição em português: latência, RAM, tokens e taxa de conclusão.
-5. Registrar o servidor em um host MCP escolhido pelo usuário. Validar as cinco ferramentas e capturar evidência sem dados privados.
+5. Registrar o servidor em um host MCP escolhido pelo usuário. Validar as ferramentas e recursos documentados e capturar evidência sem dados privados.
 6. Conectar um agente externo por MCP com uma ferramenta de leitura, allowlist e teste negativo. O teste entre processos do mesmo projeto não substitui esta entrega.
 
 Saída: relatório reproduzível com modelo, licença, versão, máquina, limitações e host; chamada externa recebida e respondida; nenhuma cobrança ou fallback remoto. Se a máquina não suportar qualidade útil, manter handoff e reduzir escopo.

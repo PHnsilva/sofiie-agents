@@ -10,7 +10,7 @@ O objetivo de longo prazo é melhorar instruções, conhecimento e resultados co
 | -------------------------------------------------------- | ----------------------------------------------------------------- |
 | 25 perfis com missão e critérios próprios                | São especializações configuráveis, sem modelos treinados por área |
 | Orquestrador com seleção explícita ou por palavras-chave | Produz planos; não executa a tarefa planejada                     |
-| Servidor MCP stdio com 5 ferramentas                     | Sem endpoint público, autenticação HTTP ou A2A                    |
+| Servidor MCP stdio com 7 ferramentas                     | Sem endpoint público, autenticação HTTP ou A2A                    |
 | Cliente MCP para peers locais autorizados                | Uso via CLI e configuração local revisada                         |
 | Modo `handoff`, sem inferência                           | O assistente externo executa a análise por conta própria          |
 | Adaptador Ollama opcional                                | Requer instalação e modelo local; não há modelo incluído          |
@@ -42,7 +42,7 @@ npm run build
 
 Adapte [config/mcp.example.json](config/mcp.example.json) com caminhos absolutos e registre o servidor em um host compatível com MCP stdio. Use diretamente `node caminho/dist/mcp/stdio.js`; mensagens de inicialização do npm não devem entrar no canal do protocolo. O formato exato de configuração depende do host.
 
-Ferramentas: `list_specialists`, `get_specialist`, `plan_task`, `consult_specialist` e `search_knowledge`.
+Ferramentas: `list_specialists`, `get_specialist`, `plan_task`, `consult_specialist`, `search_knowledge`, `list_integrations` e `render_diagram`. A renderização exige o preparo local documentado, não chama servidor público e devolve PNG sem gravar arquivos via MCP.
 
 O caminho inverso também existe: a CLI chama ferramentas de peers locais definidos por você. [Guia MCP e peers](docs/mcp.md) explica configuração, limites e o teste de integração. Nenhuma conexão foi adicionada automaticamente à sua conta ou a outro aplicativo.
 
@@ -50,11 +50,15 @@ O caminho inverso também existe: a CLI chama ferramentas de peers locais defini
 
 Os [guias reutilizáveis](guides/README.md) orientam issues, dependências, Projects, contribuição e agentes em projetos solo e em equipe, sem impor metodologia ou stack. O [catálogo técnico](docs/references.md) separa fontes por assunto e o [catálogo de APIs](docs/api-catalog.md) registra possibilidades e condições de adoção. O especialista de [modelagem](docs/modeling.md) conta com renderização PlantUML local opcional. Os guias também estão disponíveis como recursos MCP somente de leitura.
 
+## Ferramentas e APIs
+
+A pasta [tools/](tools/README.md) reúne catálogo validado, adaptador local compartilhado e uma cópia selecionada do projeto PlantUML do professor, com licença, commit e hashes. A referência original não é carregada pelo runtime. APIs futuras aparecem como planejadas; nenhuma credencial ou chamada é habilitada pelo catálogo. Não foi criado um serviço separado sem necessidade.
+
 ## Especialistas
 
 Produto e requisitos; arquitetura; backend; frontend; UX; design de interfaces; acessibilidade; QA; segurança; privacidade; DevOps; confiabilidade; desempenho; dados; engenharia de IA; avaliações; memória e recuperação; MCP e interoperabilidade; desktop; voz; experiência móvel; design de jogos; implementação de jogos e simulação; documentação e localização; modelagem e diagramas.
 
-Cada tarefa seleciona até três perfis de trabalho e até três funções de revisão. Isso não inicia processos. A [matriz de competências](docs/specialists.md) explica responsabilidades, entregas e critérios, com referências técnicas separadas.
+Cada tarefa seleciona até três perfis de trabalho e até três funções de revisão. Isso não inicia processos. O [guia de especializações](docs/specialists.md) detalha entradas, responsabilidades, entregas, revisão e limites de cada competência, com referências técnicas separadas.
 
 ## Estrutura
 
@@ -68,6 +72,7 @@ src/
   evals/          regressão do roteamento
   modeling/       renderização local opcional de diagramas
 guides/           guias gerais para copiar e adaptar
+tools/            catálogo, contratos e referências licenciadas
 knowledge/        referências e lições aprovadas separadas
 evals/            cenários públicos de regressão
 tests/            testes unitários e comunicação MCP real

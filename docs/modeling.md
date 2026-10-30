@@ -28,7 +28,7 @@ npm run diagram -- docs/diagrams/delivery-flow.puml png
 
 A fonte precisa ser um `.puml` dentro do projeto. As saídas ficam em `docs/diagrams/generated/`, nos formatos SVG ou PNG. O programa não tem fallback para servidor externo. Java é iniciado sem shell, com perfil de segurança `SANDBOX`, heap limitado, timeout e limite de saída. O layout usa a opção interna Smetana em vez de exigir instalação global de um programa de layout.
 
-Este adaptador aceita um bloco UML de até 16.000 caracteres/200 linhas e rejeita pré-processamento, funções e imagens externas. Essa restrição reduz a superfície exposta e deliberadamente não implementa toda a linguagem PlantUML. A ferramenta é uma CLI local explícita; não foi exposta como execução de processo via MCP.
+Este adaptador aceita um bloco UML de até 16.000 caracteres/200 linhas e rejeita pré-processamento, funções e imagens externas. Essa restrição reduz a superfície exposta e deliberadamente não implementa toda a linguagem PlantUML. A CLI salva arquivos de saída; o MCP expõe somente `render_diagram`, que recebe fonte, usa o mesmo adaptador fixo e devolve PNG sem escrever no repositório. Não há seleção livre de processo, arquivo ou URL por entrada de modelo.
 
 ## Revisão necessária
 
@@ -46,3 +46,7 @@ Exemplos renderizados desta entrega:
 ## Outras notações
 
 Consulte UML, C4 ou outra notação conforme o problema, como descrito no [catálogo](references.md). PlantUML é uma ferramenta possível, não um padrão obrigatório para todos os projetos. Recursos avançados, bibliotecas de macros, includes, diagramas não UML e servidores remotos exigem avaliação própria; não estão liberados por este adaptador.
+
+## Referência dentro do projeto
+
+Uma cópia selecionada de 18 arquivos foi preservada em `tools/plantuml/upstream/`, sem modificar o original e sem copiar imagens/PDF para o Git. `tools/plantuml/reference-manifest.json` registra origem, licença, commit e hashes. Esse código é somente referência, enquanto a implementação adotada continua no módulo TypeScript testado. Consulte [o contrato da ferramenta](../tools/plantuml/README.md).
