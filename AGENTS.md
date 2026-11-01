@@ -51,3 +51,8 @@ A ferramenta de diagramas usa adaptador local fixo e limitado, compartilhado com
 - O usuário autorizou a organização do Kanban e pediu retomada diária às 6h de America/Sao_Paulo a partir de 02/11/2026. O cadastro no aplicativo é separado e precisa ser conferido antes de anunciar rotina ativa.
 - Reutilizar o Project #5 após conferir sua existência/estado; a issue #12 continua aberta até configuração, importação e verificação efetivas.
 - Hoje é organização. Preparar o ambiente local no D: e inventariar antes de instalar modelos/toolchains. A revisão/aceite continua com Pedro no fim de semana, sem auto-merge.
+
+## Prioridade aprovada para as próximas retomadas
+
+- Ler `docs/DAILY_PLAN.md` e a decisão de hosts/clientes antes de selecionar a próxima entrega. Priorizar especializações aplicáveis ao Sofiie/Velumbra e seus contratos/avaliações, respeitando dependências e as alterações do proprietário no Kanban. Não criar servidores MCP nos consumidores.
+- O cronograma no aplicativo é uma configuração separada; registrar seu identificador e conferir o próximo disparo antes de declarar a rotina ativa.

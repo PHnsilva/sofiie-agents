@@ -76,3 +76,7 @@ Priorizar nas melhorias diárias especializações com aplicação concreta nos 
 - Compartilhadas: contratos de ferramentas/MCP, QA, acessibilidade e avaliação de regressões.
 
 Cada melhoria deve ter cenário de uso, entrada/saída, limites e evidência comparável. Especialistas novos exigem necessidade concreta; não ampliar o catálogo apenas por quantidade. Esta decisão orienta o backlog, não declara clientes integrados, inferência homologada ou rotinas agendadas.
+
+## Próximas retomadas
+
+[Plano diário e fila inicial](DAILY_PLAN.md). As novas issues de contrato e integração são somadas ao quadro sem redefinir estados escolhidos pelo proprietário.
